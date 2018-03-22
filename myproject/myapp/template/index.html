@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Verse</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 0px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #login {
+            width: 200px;
+            height: 220px;
+        }
+
+        #log {
+            margin-top: 20px;
+        }
+
+        #signup {
+            margin-left: 20px;
+        }
+
+        .btn-primary {
+            width: 150px;
+        }
+
+        footer {
+            margin-left: 130px;
+            margin-top: 30px;
+        }
+
+        .navbar-header {
+            margin-left: -100px;
+        }
+
+        nav {
+            background: #150D33; /* For browsers that do not support gradients */
+            /*background: -webkit-linear-gradient(#34B86D, #59BDBC); !* For Safari 5.1 to 6.0 *!*/
+            /*background: -o-linear-gradient(#34B86D, #59BDBC); !* For Opera 11.1 to 12.0 *!*/
+            /*background: -moz-linear-gradient(#34B86D, #59BDBC); !* For Firefox 3.6 to 15 *!*/
+            /*background: linear-gradient(#34B86D, #59BDBC); !* Standard syntax *!*/
+            padding-bottom:2px;
+            padding-top:2px
+        }
+        .jumbotron {
+            background-color: #352C56;
+            margin-bottom: 0;
+            min-height: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+  </head>
+
+
+
+  <body style="background-color: #150D33">
+  
+
+
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img src="" style="width:20px">
+          <a class="navbar-brand" onclick="location.href='{% url 'hello' %}'" href="#" style="color:white; margin-left: -70px">Verse</a>
+        </div>
+
+          <div id="navbar" class="navbar-collapse collapse">
+
+          <form class="navbar-form navbar-right">
+            {% if not is_logged_in %}
+            <!-- <button id="signup" name = "signup" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" >Sign up</button> -->
+            <div style="margin-right: -50px">
+              <button id="myBtn" name = "signin" type="button" class="btn btn-success" style="background-color: white; border-color: white; color: #150D33">Sign in</button>
+              <button class="btn btn-success" style="background-color: Transparent; border-color: Transparent; margin-left: 10px">About</button>
+              <button class="btn btn-success" style="background-color: Transparent; border-color: Transparent;">Help</button>
+            </div>
+              <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content" id="login">
+                <span class="close">&times;</span>
+
+                  <div id="log">
+                    Username:<br>
+                    <input id="user" type="text" name="username" value="" align="center">
+                    <br>
+                    Password:<br>
+                    <input id="pass" type="password" name="password" value="" align="center">
+                    <br><br>
+                    <button name = "login" type="button" class="btn btn-success" onclick="location.href='{% url 'logged' %}'" style="color: white; background-color: #150D33; border-color: Transparent;">Sign in</button>
+                    <a id="signup" href="#" style="color: #352C56">Sign up</a>
+                  </div>
+              </div>
+            </div>
+            {% endif %}
+            {% if is_logged_in %}
+            <div style="margin-right: -50px">
+              <span style="color:white; margin-right: 20px">Welcome, {{ name }}!</span>
+              <button name = "signout" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" style="background-color: Transparent; border-color: white;">Sign out</button>
+              <button class="btn btn-success" style="background-color: Transparent; border-color: Transparent; margin-left: 10px">About</button>
+              <button class="btn btn-success" style="background-color: Transparent; border-color: Transparent;">Help</button>
+            </div>
+            {% endif %}
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron text-center" style="padding-top: 250px; padding-bottom: 220px; height: 840px">
+      <div class="container" style="margin-top: -50px">
+        <h1 style="color: white">Verse</h1>
+        <p style="color: white">Optimal insight into content growth</p>
+        {% if not is_logged_in %}
+        <p><img src="https://image.ibb.co/jVfCa6/1112.gif" alt="" style="width:1000px;margin-left:-10px"></p>
+        {% endif %}
+        <br>
+        {% if is_logged_in %}
+            <br>
+            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'library' %}'" role="button" style="background-color: white; border-color: white; color: #150D33;">&laquo; Past</a>
+            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'predict' %}'" role="button" style="margin-left: 100px; color: white; background-color: Transparent; border-color: white;">Future &raquo;</a>
+            <br><br><br>
+            <div style="width: 180px; position: absolute; margin-left: 355px;"><a onclick="location.href='{% url 'library' %}'" style="font-size: 18px; font-weight: 100; color: #aaaaaa; ">
+              Track the performance of your videos and understand the stories behind the changes.
+            </a></div>
+            <div style="width: 180px; position: absolute; margin-left: 610px;"><a onclick="location.href='{% url 'predict' %}'" style="font-size: 18px; font-weight: 100; color: #aaaaaa; ">
+              Predict the future of your new content and get strategies to make it even better.
+            </a></div>
+        {% endif %}
+      </div>
+    </div>
+      <footer style="height:10px" >
+        <p style="color: white; margin-top: -10px" align="left">&copy; 2017 Verse, Inc.</p>
+      </footer>
+
+    
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    var pred = document.getElementById("predict");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+        document.getElementById("user").value = "brandy";
+        document.getElementById("pass").value = "12345678";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+
+        }
+    }
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

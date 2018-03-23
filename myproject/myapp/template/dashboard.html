@@ -32,15 +32,15 @@
 
         .nav-tabs { border-bottom: 10px solid #150D33; }
             .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
-            .nav-tabs > li > a { border: none; color: white;background: #5a4080; }
-                .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: transparent; }
-                .nav-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+            .nav-tabs > li > a { border: none; color: black; background: lightgrey }
+                .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color:black !important; background: black; }
+                .nav-tabs > li > a::after { content: ""; background: aliceblue; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
             .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
-        .tab-nav > li > a::after { background: #5a4080 none repeat scroll 0% 0%; color: #fff; }
+        .tab-nav > li > a::after { background: aliceblue none repeat scroll 0% 0%; color: aliceblue; }
         .tab-pane { padding: 15px 0; height: 300px; }
-        .tab-content{padding:20px; background-color: #60597B}
+        .tab-content{padding:20px; background-color: aliceblue}
         .nav-tabs > li  {width:33.33%; text-align:center;}
-        .card {background: #150D33 none repeat scroll 0% 0%; box-shadow: 5px 5px 5px black; margin-bottom: 30px;  margin-right: 60px;}
+        .card {background: #150D33 box-shadow: 5px 5px 5px black; }
 
 
         @media all and (max-width:724px){
@@ -55,7 +55,33 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function() {
 
+        var chart = new CanvasJS.Chart("chartContainer", {
+          backgroundColor: "aliceblue",
+          animationEnabled: true,
+          title: {
+            text: "Top 5 Outfit Brands"
+          },
+          data: [{
+            type: "pie",
+            startAngle: 240,
+            yValueFormatString: "##0.00\"%\"",
+            indexLabel: "{label} {y}",
+            dataPoints: [
+              {y: 79.45, label: "Google"},
+              {y: 7.31, label: "Bing"},
+              {y: 7.06, label: "Baidu"},
+              {y: 4.91, label: "Yahoo"},
+              {y: 1.26, label: "Others"}
+            ]
+          }]
+        });
+        chart.render();
+
+        }
+    </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -112,11 +138,11 @@
         <div class="container" style="padding-top: 80px;">
             <div class="row">
                 <div class="col-12 col-md-4">
-                  <div style="color: Grey; font-size: 20px; text-align:left; margin-left: 20px; margin-bottom: 20px;">Location:  </div>
+                  <div style="color: white; font-size: 20px; text-align:left; margin-left: 20px; margin-bottom: 20px;">Location:  </div>
                   <div style="color: white; font-size: 25px; text-align:left; margin-left: 20px;">61st 2nd Ave </div>
                 </div>
                 <div class="col-12 col-md-8">
-                  <div style="color: Grey; font-size: 18px; text-align:left; margin-left: 13px; margin-bottom: 20px;">Plase Select a Time Frame:</div>
+                  <div style="color: white; font-size: 18px; text-align:left; margin-left: 13px; margin-bottom: 20px;">Plase Select a Time Frame:</div>
                   <form>
                         <div class="form-row">
                           <div class="form-group col-md-4">
@@ -173,31 +199,12 @@
                         <img id="user2" src="http://preview.ibb.co/muOiuc/age2.png" style="width: 500px; margin-top: 0px; display: none;">
                     </div>
                     <div role="tabpanel" class="tab-pane" id="profile" style="height: 400px; padding-left: 20px">
-                        <h1 style="font-size: 25px; color: white; margin-top: 0px" align="left">Interesting Fact about this location:</h1>
-                        <p style="color: white; font-size: 20px; padding-left: 10px" align="left">
-                          Top 5 Brands: GAP, ZARA, NIKE, Adidas, <br>
-                          Dogs: 22<br>
-                          Bicycles: 12<br>
-                          Kids: 20<br>
-                        </p>
+                        
+                          <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                         
                     </div>
                     <div role="tabpanel" class="tab-pane" id="messages" style="height: 400px; padding-left: 20px">
                         
-                        <br>
-                        <br>
-                        <h1 style="font-size: 25px; color: white; margin-top: -20px" align="left">Suggestions and Predictions</h1>
-                        <p style="color: white; font-size: 20px; padding-left: 10px" align="left">
-                          Post when "bitcoin" appears on TechCrunch<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp; + 50% viewership<br>
-                          Pivot to a tutorial<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp; + 20% viewership<br>
-                          Trigger a celebrity share on Instagram<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp; + 60% viewership<br>
-                          Include content about Blockchain<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp; + 35% viewership
-                        </p>
-
-                        <button style="background-color: transparent; border-color: white; color: white; position: inherit; margin-top: 5px" class="btn btn-primary btn-lg">Help me to grow!</button><br>
                     </div>
                   </div>
                 </div>

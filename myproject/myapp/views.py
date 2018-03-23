@@ -6,13 +6,13 @@ def hello(request):
    return render(request, 'myapp/template/index.html', {})
 
 def logged(request):
-   return render(request, 'myapp/template/index.html', {'name':"Jessica",'is_logged_in':True})
+   return render(request, 'myapp/template/index.html', {'name':"Bob",'is_logged_in':True})
 
 def map(request):
-	return render(request, 'myapp/template/map.html', {'name':"Jessica",'is_logged_in':True})
+	return render(request, 'myapp/template/map.html', {'name':"Bob",'is_logged_in':True})
 
 def dashboard(request):
-	return render(request, 'myapp/template/dashboard.html', {'name':"Jessica",'is_logged_in':True})
+	return render(request, 'myapp/template/dashboard.html', {'name':"Bob",'is_logged_in':True})
 
 def prediction(request):
-	return render(request, 'myapp/template/prediction.html', {'name':"Jessica",'is_logged_in':True})
+	return render(request, 'myapp/template/prediction.html', {'name':"Bob",'is_logged_in':True})

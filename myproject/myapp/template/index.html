@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Verse</title>
+    <title>MagicLens</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -93,7 +93,7 @@
         }
 
         nav {
-            background: #150D33; /* For browsers that do not support gradients */
+            background: #000031; /* For browsers that do not support gradients */
             /*background: -webkit-linear-gradient(#34B86D, #59BDBC); !* For Safari 5.1 to 6.0 *!*/
             /*background: -o-linear-gradient(#34B86D, #59BDBC); !* For Opera 11.1 to 12.0 *!*/
             /*background: -moz-linear-gradient(#34B86D, #59BDBC); !* For Firefox 3.6 to 15 *!*/
@@ -102,20 +102,22 @@
             padding-top:2px
         }
         .jumbotron {
-            background-color: #352C56;
+            background-color: snow;
+            background-image: url(http://www.twitrcovers.com/wp-content/uploads/2013/08/Abstract-Textures-l.jpg);
             margin-bottom: 0;
             min-height: 50%;
             background-repeat: no-repeat;
             background-position: center;
             -webkit-background-size: cover;
             background-size: cover;
+            
         }
     </style>
   </head>
 
 
 
-  <body style="background-color: #150D33">
+  <body style="background-color: #000031">
   
 
 
@@ -129,7 +131,7 @@
             <span class="icon-bar"></span>
           </button>
           <img src="" style="width:20px">
-          <a class="navbar-brand" onclick="location.href='{% url 'hello' %}'" href="#" style="color:white; margin-left: -70px">Verse</a>
+          <a class="navbar-brand" onclick="location.href='{% url 'hello' %}'" href="#" style="color:white; margin-left: -70px">MagicLens</a>
         </div>
 
           <div id="navbar" class="navbar-collapse collapse">
@@ -176,30 +178,29 @@
 
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron text-center" style="padding-top: 250px; padding-bottom: 220px; height: 840px">
-      <div class="container" style="margin-top: -50px">
-        <h1 style="color: white">Verse</h1>
-        <p style="color: white">Optimal insight into content growth</p>
+    <div class="jumbotron text-center" style="padding-top: 230px; padding-bottom: 220px; height: 840px">
+      <div class="container" style="margin-top: -30px">
+        <h1 style="color: white">MagicLens</h1>
+        <p style="color: white">Optimal insight into outdoor customer engagement</p>
         {% if not is_logged_in %}
-        <p><img src="https://image.ibb.co/jVfCa6/1112.gif" alt="" style="width:1000px;margin-left:-10px"></p>
+            <img src="https://image.ibb.co/cqdDuc/logo.png" alt="" style="width:150px;">
         {% endif %}
         <br>
         {% if is_logged_in %}
             <br>
-            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'library' %}'" role="button" style="background-color: white; border-color: white; color: #150D33;">&laquo; Past</a>
-            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'predict' %}'" role="button" style="margin-left: 100px; color: white; background-color: Transparent; border-color: white;">Future &raquo;</a>
+            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'library' %}'" role="button" style="background-color: azure; border-color: black; color: #150D33;"> Reflect &raquo;</a>
+            </a>
             <br><br><br>
-            <div style="width: 180px; position: absolute; margin-left: 355px;"><a onclick="location.href='{% url 'library' %}'" style="font-size: 18px; font-weight: 100; color: #aaaaaa; ">
-              Track the performance of your videos and understand the stories behind the changes.
-            </a></div>
-            <div style="width: 180px; position: absolute; margin-left: 610px;"><a onclick="location.href='{% url 'predict' %}'" style="font-size: 18px; font-weight: 100; color: #aaaaaa; ">
-              Predict the future of your new content and get strategies to make it even better.
-            </a></div>
         {% endif %}
+        
+        <div style="width: 400px; position: absolute; margin-left: 360px; "><a style="font-size: 18px; font-weight: 200; color: white; ">
+              Understanding the crowd attributes of your customers and the stories behind them.
+            </a></div>
+  
       </div>
     </div>
       <footer style="height:10px" >
-        <p style="color: white; margin-top: -10px" align="left">&copy; 2017 Verse, Inc.</p>
+        <p style="color: white; margin-top: -10px" align="left">&copy; 2018 MagicLens, Inc.</p>
       </footer>
 
     
@@ -220,7 +221,7 @@
     // When the user clicks the button, open the modal 
     btn.onclick = function() {
         modal.style.display = "block";
-        document.getElementById("user").value = "brandy";
+        document.getElementById("user").value = "Jessica";
         document.getElementById("pass").value = "12345678";
     }
 

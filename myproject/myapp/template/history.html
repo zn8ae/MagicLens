@@ -16,7 +16,7 @@
             margin-left: 20px;
         }
         nav {
-            background: #000031; /* For browsers that do not support gradients */
+            background: #150D33; /* For browsers that do not support gradients */
             /*background: -webkit-linear-gradient(#34B86D, #59BDBC); !* For Safari 5.1 to 6.0 *!*/
             /*background: -o-linear-gradient(#34B86D, #59BDBC); !* For Opera 11.1 to 12.0 *!*/
             /*background: -moz-linear-gradient(#34B86D, #59BDBC); !* For Firefox 3.6 to 15 *!*/
@@ -30,7 +30,7 @@
             margin: 0;
         }
 
-        .nav-tabs { border-bottom: 10px solid #000031; }
+        .nav-tabs { border-bottom: 10px solid #150D33; }
             .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
             .nav-tabs > li > a { border: none; color: white;background: #5a4080; }
                 .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: transparent; }
@@ -40,7 +40,7 @@
         .tab-pane { padding: 15px 0; height: 300px; }
         .tab-content{padding:20px; background-color: #60597B}
         .nav-tabs > li  {width:33.33%; text-align:center;}
-        .card {background: #150D33 none repeat scroll 0% 0%; box-shadow: 5px 5px 5px black; margin-bottom: 30px; width: 700px}
+        .card {background: #150D33 none repeat scroll 0% 0%; box-shadow: 5px 5px 5px black; margin-bottom: 30px;  margin-right: 60px;}
 
 
         @media all and (max-width:724px){
@@ -66,7 +66,7 @@
 
 </head>
 
-<body style="background-color: #000031">
+<body style="background-color: #150D33">
 
      <nav class="navbar navbar-fixed-top">
       <div class="container">
@@ -106,92 +106,110 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
+   
     <!-- Page Content -->
      <div class="jumbotron text-center" style="padding-top: 0px; padding-bottom: 220px; height: 1300px; background-color: #352C56">
-        <div class="container" style="padding-top: 0px">
+        <div class="container" style="padding-top: 80px;">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                  <div style="color: Grey; font-size: 20px; text-align:left; margin-left: 20px; margin-bottom: 20px;">Location:  </div>
+                  <div style="color: white; font-size: 25px; text-align:left; margin-left: 20px;">61st 2nd Ave </div>
+                </div>
+                <div class="col-12 col-md-8">
+                  <div style="color: Grey; font-size: 18px; text-align:left; margin-left: 13px; margin-bottom: 20px;">Plase Select a Time Frame:</div>
+                  <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Start Date: MM/DD/YY">
+                          </div>
+                          <div class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="End Date: MM/DD/YY">
+                          </div>
+                          <div class="form-group col-md-4">
+                              <select class="form-control" id="exampleFormControlSelect1">
+                                <option selected>Select Time Frame</option>
+                                <option>00:00 - 02:00</option>
+                                <option>02:00 - 04:00</option>
+                                <option>04:00 - 06:00</option>
+                                <option>06:00 - 08:00</option>
+                                <option>08:00 - 10:00</option>
+                                <option>10:00 - 12:00</option>
+                                <option>12:00 - 14:00</option>
+                                <option>14:00 - 16:00</option>
+                                <option>16:00 - 18:00</option>
+                                <option>18:00 - 20:00</option>
+                                <option>20:00 - 22:00</option>
+                                <option>22:00 - 24:00</option>
+                              </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+              </div>
+        </div>
+      
+        <div class="container" style="position: absolute; margin-top: 80px; margin-left: 80px;">
+            <div class="row">
+                <!-- Nav tabs -->
+                <div class="card">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-hand-paper-o"></i>  <span>Demographics</span></a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-file-video-o"></i>  <span>Insights</span></a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-fighter-jet"></i>  <span>Ads</span></a></li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home" style="height: 400px">
+                      <div>
+                        Total Impression: 3,000
+                      </div>
+                      <div>Gender Distribution</div>
+                      <div>Age Distribution</div>
+                        <img id="user1" src="http://preview.ibb.co/dCfPjc/Slice1.png" style="width: 500px; margin-top: 0px; display: inline-block;">
+                        <img id="user2" src="http://preview.ibb.co/jhFh4c/Gender2.png" style="width: 500px; margin-top: 0px; display: none;">
+                      
+                        <img id="user2" src="http://preview.ibb.co/iaugEc/age1.png" style="width: 500px; margin-top: 0px; display: inline-block;">
+                        <img id="user2" src="http://preview.ibb.co/muOiuc/age2.png" style="width: 500px; margin-top: 0px; display: none;">
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile" style="height: 400px; padding-left: 20px">
+                        <h1 style="font-size: 25px; color: white; margin-top: 0px" align="left">Interesting Fact about this location:</h1>
+                        <p style="color: white; font-size: 20px; padding-left: 10px" align="left">
+                          Top 5 Brands: GAP, ZARA, NIKE, Adidas, <br>
+                          Dogs: 22<br>
+                          Bicycles: 12<br>
+                          Kids: 20<br>
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages" style="height: 400px; padding-left: 20px">
+                        
+                        <br>
+                        <br>
+                        <h1 style="font-size: 25px; color: white; margin-top: -20px" align="left">Suggestions and Predictions</h1>
+                        <p style="color: white; font-size: 20px; padding-left: 10px" align="left">
+                          Post when "bitcoin" appears on TechCrunch<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; + 50% viewership<br>
+                          Pivot to a tutorial<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; + 20% viewership<br>
+                          Trigger a celebrity share on Instagram<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; + 60% viewership<br>
+                          Include content about Blockchain<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp; + 35% viewership
+                        </p>
+
+                        <button style="background-color: transparent; border-color: white; color: white; position: inherit; margin-top: 5px" class="btn btn-primary btn-lg">Help me to grow!</button><br>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        
+          
+        
+        <div class="container" style="padding-top: 10px">
+          
             <!--<img style="margin-top: 60px" id="image" class="center fit" src="https://image.ibb.co/fw9XQ6/history.png">-->
-            <div id="chartContainer" style="height: 300px; width: 100%; margin-top: 80px"></div>
 
-            <div class="container" id="bl1" style="float: right; margin-top: 120px; display: none">
-              <div class="row">
-                <div class="col-md-12">
-                  <!-- Nav tabs -->
-                  <div class="card" style="width: 300px;">
-                    <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active" style="width:100%"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-users"></i>  <span style="font-size: 20px">Oct 6th</span></a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content" style="background-color: #60597B">
-                      <div role="tabpanel" class="tab-pane active" id="home1" style="height: 250px; padding-left: 10px;">
-                          <br>
-                          <p style="color: white; font-size: 18px; padding-left: 10px; margin-top: -20px" align="left">
-                            Viewership: 48,000<br><br>
-                            Completion rate: 82%<br><br>
-                            Average % watched: 91%<br><br>
-                            Average user age: 17.5<br><br>
-                            Play rate: 60.2%
-                          </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container" id="bl2" style="margin-top: 120px; position: absolute; margin-left: 400px;  display: none">
-              <div class="row">
-                <div class="col-md-12">
-                  <!-- Nav tabs -->
-                  <div class="card" style="width: 300px;">
-                    <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active" style="width:100%"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-users"></i>  <span style="font-size: 20px">Oct 17th</span></a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content" style="background-color: #4E456F">
-                      <div role="tabpanel" class="tab-pane active" id="home1" style="height: 250px; padding-left: 10px;">
-                          <br>
-                          <p style="color: white; font-size: 18px; padding-left: 10px; margin-top: -20px" align="left">
-                            Viewership: 36,000<br><br>
-                            Completion rate: 45%<br><br>
-                            Average % watched: 52%<br><br>
-                            Average user age: 33.6<br><br>
-                            Play rate: 12.5%
-                          </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container" id="bl3" style="margin-top: 120px; position: absolute; margin-left: 800px; display: none">
-              <div class="row">
-                <div class="col-md-12">
-                  <!-- Nav tabs -->
-                  <div class="card" style="width: 300px;">
-                    <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active" style="width:100%"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-users"></i>  <span style="font-size: 20px">Key Events</span></a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content" style="background-color: #6F4F74">
-                      <div role="tabpanel" class="tab-pane active" id="home1" style="height: 250px; padding-left: 0px;">
-                          <br>
-                          <p style="color: white; font-size: 15px; padding-left: 5px; margin-top: -35px" align="left">
-                            15:00 Oct 6th: Article about Sumsung laptop published on <a href="">TechCrunch</a><br><br>
-                            11:00 Oct 10th: Apple released its new iMac<br><br>
-                            17:00 Oct 14th: New lawsuit against Sumsung patents published on <a>Yahoo Finance</a><br><br>
-                            13:30 Oct 15th: Worldwide recall of Sumsung laptops
-                          </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
         </div>
      </div>
 
@@ -211,80 +229,7 @@
             $(window).bind('resize', set_body_height);
             set_body_height();
          });
-         window.onload = function () {
-            var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                backgroundColor: "#352C56",
-                height: 380,
-                title:{
-                    text: "Video Insights",
-                    fontColor: "white",
-                    fontSize: 30,
-                    padding: 30,
-                    margin: 30,
-                    horizontalAlign: "left"
-                },
-                axisX:{
-                    includeZero: false
-
-                },
-                axisY:{
-                    title: "Viewers",
-                    includeZero: false
-                },
-                data: [{
-                    type: "line",
-                    lineColor: "#FCF175",
-                    markerType: "circle",
-                    markerColor: "#FCF175",
-                    markerSize: "5",
-                    intervalType: "day",
-                    dataPoints: [
-                        { x: new Date(2016, 9, 1), y: 32000 },
-                        { x: new Date(2016, 9, 2), y: 34000 },
-                        { x: new Date(2016, 9, 3), y: 38000 },
-                        { x: new Date(2016, 9, 4), y: 42000 },
-                        { x: new Date(2016, 9, 5), y: 45000 },
-                        { x: new Date(2016, 9, 6), y: 48000, indexLabel: "highest",markerColor: "green", markerType: "triangle", indexLabelFontColor: "white",
-                            click: function(e){
-                                document.getElementById("bl1").style.display = "block";
-                            },
-                        },
-                        { x: new Date(2016, 9, 7), y: 46000 },
-                        { x: new Date(2016, 9, 8), y: 42000 },
-                        { x: new Date(2016, 9, 9), y: 37500 },
-                        { x: new Date(2016, 9, 10), y: 35000 },
-                        { x: new Date(2016, 9, 11), y: 33000 },
-                        { x: new Date(2016, 9, 12), y: 32000 },
-                        { x: new Date(2016, 9, 13), y: 30000, indexLabel: "lowest",markerColor: "red", markerType: "cross", indexLabelFontColor: "white" },
-                        { x: new Date(2016, 9, 14), y: 31500 },
-                        { x: new Date(2016, 9, 15), y: 33000 },
-                        { x: new Date(2016, 9, 16), y: 34500},
-                        { x: new Date(2016, 9, 17), y: 36000,
-                            click: function(e){
-                                document.getElementById("bl2").style.display = "block";
-                                document.getElementById("bl3").style.display = "block";
-                            },},
-                        { x: new Date(2016, 9, 18), y: 34000 },
-                        { x: new Date(2016, 9, 19), y: 30000 },
-                        { x: new Date(2016, 9, 20), y: 26000 },
-                        { x: new Date(2016, 9, 21), y: 22000 },
-                        { x: new Date(2016, 9, 22), y: 18000 },
-                        { x: new Date(2016, 9, 23), y: 15000 },
-                        { x: new Date(2016, 9, 24), y: 13000 },
-                        { x: new Date(2016, 9, 25), y: 11000 },
-                        { x: new Date(2016, 9, 26), y: 9000 },
-                        { x: new Date(2016, 9, 27), y: 6000 },
-                        { x: new Date(2016, 9, 28), y: 4000 },
-                        { x: new Date(2016, 9, 29), y: 2000 },
-                        { x: new Date(2016, 9, 30), y: 1000 },
-                        { x: new Date(2016, 9, 31), y: 500 }
-                    ]
-                }]
-            });
-            chart.render();
-        }
+         
      </script>
 
     <!-- Bootstrap Core JavaScript -->

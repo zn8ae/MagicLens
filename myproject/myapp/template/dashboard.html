@@ -12,7 +12,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Verse</title>
+    <title>MagicLens</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,7 @@
         }
 
         nav {
-            background: #150D33; /* For browsers that do not support gradients */
+            background: #000031; /* For browsers that do not support gradients */
             /*background: -webkit-linear-gradient(#34B86D, #59BDBC); !* For Safari 5.1 to 6.0 *!*/
             /*background: -o-linear-gradient(#34B86D, #59BDBC); !* For Opera 11.1 to 12.0 *!*/
             /*background: -moz-linear-gradient(#34B86D, #59BDBC); !* For Firefox 3.6 to 15 *!*/
@@ -58,7 +58,7 @@
 
 
 
-  <body style="background-color: #150D33">
+  <body style="background-color: #000031">
   
     <nav class="navbar navbar-fixed-top">
       <div class="container">
@@ -70,7 +70,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" onclick="location.href='{% url 'logged' %}'" href="#" style="color:white; margin-left: -70px">Verse</a>
+          <a class="navbar-brand" onclick="location.href='{% url 'logged' %}'" href="#" style="color:white; margin-left: -70px">MagicLens</a>
 
 
         </div>
@@ -101,80 +101,12 @@
     <div class="jumbotron text-center" style="padding-bottom: 220px; height: 840px; background-color: #352C56">
         <div class="container" style="padding-top: 50px;">
 
-        <div class="row">
-
-            <div class="col-lg-12" align="left">
-                <h1 style="color:white; font-size: 30px;">Define my new video</h1>
-                <br>
-            </div>
-
-            <div id="upload">
-                <iframe id="vid" width="420" height="315" src="" frameborder="0" allowfullscreen></iframe>
-                <br>
-                <input id="vlink" type="text" name="genre" size="58" placeholder="Video URL" style="margin-top:18px"/>
-                <br>
-                <input name="myFile" type="file" style="margin-left:-10px">
-                <button id="addURL" style="background-color: transparent; border-color: white; color: white; margin-top: 20px" class="btn btn-primary">Parse</button>
-            </div>
-
-
-            <table>
-                <tr>
-                  <td align="right" style="color:white">URL:</td>
-                  <td align="left"><input id="url" type="text" name="genre" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white">Genre:</td>
-                  <td align="left"><input id="genre" type="text" name="genre" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white">Length:</td>
-                  <td align="left"><input id="len" type="text" name="length" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white">Tags:</td>
-                  <td align="left"><input id="tags" type="text" name="topics" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white">Published on:</td>
-                  <td align="left"><input id="since" type="text" name="actors" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white">Platform:</td>
-                  <td align="left"><input id="platform" type="text" name="platform" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white"># Views:</td>
-                  <td align="left"><input id="viewer" type="text" name="viewership" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white">Source:</td>
-                  <td align="left"><input id="sou" type="text" name="source" size="40"/></td>
-                </tr>
-
-                <tr>
-                  <td align="right" style="color:white">Audience:</td>
-                  <td align="left"><input id="aud" type="text" name="dest" size="40"/></td>
-                </tr>
-
-            </table>
-            <button name = "login" type="button" class="btn btn-primary" onclick="location.href='{% url 'prediction' %}'"
-                    style="margin-left: -180px; margin-top:20px; background-color: transparent; color: white; border-color: white;" onclick="location.href='{% url 'logged' %}'">Show me the future</button>
-
-        </div>
         </div>
     </div>
 
         <!-- Footer -->
         <footer style="height:10px">
-        <p style="color: white; margin-top: -10px" align="left">&copy; 2017 Verse, Inc.</p>
+        <p style="color: white; margin-top: -10px" align="left">&copy; 2018 MagicLens, Inc.</p>
       </footer>
 
 

@@ -8,14 +8,11 @@ def hello(request):
 def logged(request):
    return render(request, 'myapp/template/index.html', {'name':"Jessica",'is_logged_in':True})
 
-def library(request):
-	return render(request, 'myapp/template/library.html', {'name':"Jessica",'is_logged_in':True})
+def map(request):
+	return render(request, 'myapp/template/map.html', {'name':"Jessica",'is_logged_in':True})
 
-def predict(request):
-	return render(request, 'myapp/template/predict.html', {'name':"Jessica",'is_logged_in':True})
-
-def history(request):
-	return render(request, 'myapp/template/history.html', {'name':"Jessica",'is_logged_in':True})
+def dashboard(request):
+	return render(request, 'myapp/template/dashboard.html', {'name':"Jessica",'is_logged_in':True})
 
 def prediction(request):
 	return render(request, 'myapp/template/prediction.html', {'name':"Jessica",'is_logged_in':True})

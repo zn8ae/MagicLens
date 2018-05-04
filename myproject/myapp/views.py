@@ -16,3 +16,6 @@ def dashboard(request):
 
 def prediction(request):
 	return render(request, 'myapp/template/prediction.html', {'name':"Bob",'is_logged_in':True})
+
+def predict(request):
+	return render(request, 'myapp/template/predict.html', {'name':"Bob",'is_logged_in':True})

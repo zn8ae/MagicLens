@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>MagicLens</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        td {
+            padding:10px;
+        }
+
+        input[type=file] {
+            padding:10px;
+        }
+
+        #upload {
+            float: right;
+            margin-right: 50px;
+        }
+
+        nav {
+            background: #150D33; /* For browsers that do not support gradients */
+            /*background: -webkit-linear-gradient(#34B86D, #59BDBC); !* For Safari 5.1 to 6.0 *!*/
+            /*background: -o-linear-gradient(#34B86D, #59BDBC); !* For Opera 11.1 to 12.0 *!*/
+            /*background: -moz-linear-gradient(#34B86D, #59BDBC); !* For Firefox 3.6 to 15 *!*/
+            /*background: linear-gradient(#34B86D, #59BDBC); !* Standard syntax *!*/
+            padding-bottom:2px;
+            padding-top:2px
+        }
+
+        iframe {
+            margin-top: 10px;
+        }
+
+    </style>
+  </head>
+
+
+
+  <body style="background-color: #150D33">
+  
+    <nav class="navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" onclick="location.href='{% url 'logged' %}'" href="#" style="color:white; margin-left: -70px">MagicLens</a>
+
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+
+
+
+          <form class="navbar-form navbar-right">
+            {% if not is_logged_in %}
+           <!--  <button id="signup" name = "signup" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" >Sign up</button> -->
+            <button id = "signin"name = "signin" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" style="background-color: Transparent; border-color: white;">Sign in</button>
+            {% endif %}
+            {% if is_logged_in %}
+              <div style="margin-right: -50px">
+                <span style="color:white; margin-right: 20px">Welcome, {{ name }}!</span>
+                <button name = "signout" type="button" class="btn btn-success" onclick="location.href='{% url 'hello' %}'" style="background-color: Transparent; border-color: white;">Sign out</button>
+                <button class="btn btn-success" style="background-color: Transparent; border-color: Transparent; margin-left: 10px">About</button>
+                <button class="btn btn-success" style="background-color: Transparent; border-color: Transparent;">Help</button>
+              </div>
+            {% endif %}
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="jumbotron text-center" style="padding-top: 100px; height: 800px; background-color: #352C56">
+        <div class="container" style="padding-top: 50px;">
+
+        <div class="row" class="col-lg-12" align="center">
+
+            <div class="col-lg-12" align="center">
+                <h1 style="color:white; font-size: 30px; padding-left: 50px; padding-bottom: 30px">Custom Recommendation</h1>
+                <br>
+            </div>
+
+          
+
+            <table>
+                <tr>
+                  <td align="right" style="color:white">Time</td>
+                  <td align="left"><input id="url" type="text" size="40" value="16:00-18:00"/></td>
+                </tr>
+
+                <tr>
+                  <td align="right" style="color:white">Location</td>
+                  <td align="left"><input id="genre" type="text" size="40" value="SoHo"/></td>
+                </tr>
+
+                <tr>
+                  <td align="right" style="color:white">Age</td>
+                  <td align="left"><input id="len" type="text" size="40" value="25-34"/></td>
+                </tr>
+
+                <tr>
+                  <td align="right" style="color:white">Gender</td>
+                  <td align="left"><input id="tags" type="text" size="40" value="Female" /></td>
+                </tr>
+
+                <tr>
+                  <td align="right" style="color:white">Style</td>
+                  <td align="left"><input id="since" type="text" size="40" value="Upscale, Trendy, Luxury" /></td>
+                </tr>
+
+                <tr>
+                  <td align="right" style="color:white">Similar Brands</td>
+                  <td align="left"><input id="platform" type="text" size="40" value="Louis Vuitton, Hermes, Chanel" /></td>
+                </tr>
+
+                <tr>
+                  <td align="right" style="color:white">Target Views</td>
+                  <td align="left"><input id="viewer" type="text" size="40" value="10000" /></td>
+                </tr>
+
+
+            </table>
+            <button name = "login" type="button" class="btn btn-primary" onclick="location.href='{% url 'prediction' %}'"
+                    style="margin-left: 50px; margin-top:50px; background-color: transparent; color: white; border-color: white;" onclick="location.href='{% url 'logged' %}'">Show me recommendations</button>
+
+        </div>
+        </div>
+    </div>
+
+        <!-- Footer -->
+        <footer style="height:10px">
+        <p style="color: white; margin-top: -10px" align="left">&copy; 2018 MagicLens, Inc.</p>
+      </footer>
+
+
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        var addVideo = document.getElementById('addURL');
+        addVideo.onclick = function() {
+            document.getElementById("vid").src = document.getElementById("vlink").value;
+            document.getElementById("url").value = document.getElementById("vlink").value;
+            document.getElementById("genre").value = "Tutorial";
+            document.getElementById("len").value = "1:55";
+            document.getElementById("tags").value = "Bitcoin, FinTech, Mining, Technology, Cartoon";
+            document.getElementById("since").value = "Apr 9, 2013";
+            document.getElementById("platform").value = "YouTube";
+            document.getElementById("viewer").value = "3,925,777";
+            document.getElementById("sou").value = "BitcoinMiningCom";
+            document.getElementById("aud").value = "Student, Millennial, Engineer";
+        }
+    </script>
+  </body>
+</html>

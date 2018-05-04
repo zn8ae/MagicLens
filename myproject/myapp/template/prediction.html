@@ -15,7 +15,7 @@
     <script src="bootstrap-switch.js"></script>
 
 
-    <title>Verse</title>
+    <title>MagicLens</title>
 
     <style>
         footer {
@@ -94,7 +94,7 @@
             <span class="icon-bar"></span>
           </button>
 
-              <a class="navbar-brand" onclick="location.href='{% url 'logged' %}'" href="#" style="color: white; margin-left: -70px">Verse</a>
+              <a class="navbar-brand" onclick="location.href='{% url 'logged' %}'" href="#" style="color: white; margin-left: -70px">MagicLens</a>
        
           
         </div>
@@ -122,126 +122,105 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="jumbotron text-center" style="padding-bottom: 220px; height: 840px; background-color: #352C56">
-        <div class="container" style="padding-top: 20px;">
+    <div class="jumbotron text-center" style="padding-bottom: 220px; height: 800px; background-color: #352C56">
+        <div class="container" style="padding-top: 50px;">
+          <table class="table" style="color: white">
+              <b style="font-size: 20px; color: white;">Ads With Most Impression Likelihood</b>
+              </br></br></br>
+                <thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col" class="text-center">Brand</th>
+                      <th scope="col" class="text-center">Category</th>
+                      <th scope="col" class="text-center">CampaignID</th>
+                      <th scope="col" class="text-center">Likelihood</th>
+                      <th scope="col" class="text-center">Detail</th>
+                  </tr>
+                </thead>
+                   
+                <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Louis Vuitton</td>
+                      <td>Handbag</td>
+                      <td>AD759</td>
+                      <td>0.295</td>
+                      <td><a href="http://theinspirationroom.com/daily/print/2009/1/louis_vuitton_andre_steffi.jpg">Link</a ></td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Creed</td>
+                      <td>Perfume</td>
+                      <td>FR299</td>
+                      <td>0.283</td>
+                      <td><a href=#>Link</a ></td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Jimmy Choo</td>
+                      <td>Shoes</td>
+                      <td>JC375</td>
+                      <td>0.219</td>
+                      <td><a href="">Link</a ></td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Givenchy</td>
+                      <td>Clothing</td>
+                      <td>GC828</td>
+                      <td>0.204</td>
+                      <td><a href=#>Link</a ></td>
+                     </tr>
+                    
+                    
+
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Rolex</td>
+                      <td>Watch</td>
+                      <td>AE374</td>
+                      <td>0.192</td>
+                      <td><a href="https://aytm.com/blog/wp-content/uploads/2012/09/rolex-ad.png">Link</a ></td>
+                    </tr>
+
+                    <tr>
+                      <th scope="row">6</th>
+                      <td>Apple</td>
+                      <td>Cell Phone</td>
+                      <td>AP148</td>
+                      <td>0.190</td>
+                      <td><a href=#>Link</a ></td>
+                    </tr>
 
 
-            <div class="container1" style="padding-top: 0px">
-                <img style="margin-left: -105px; height: 200px" id="image" class="center fit" src="https://image.ibb.co/jPqg2m/header.png">
-            </div>
-            <br>
+                    <tr>
+                      <th scope="row">7</th>
+                      <td>Adidas Original</td>
+                      <td>Outfit</td>
+                      <td>AO123</td>
+                      <td>0.187</td>
+                      <td><a href=#>Link</a ></td>
+                    </tr>
 
-            <div class="container" style="float: right;">
-              <div class="row">
-                <div class="col-md-12">
-                  <!-- Nav tabs -->
-                  <div class="card" style="width: 300px;">
-                    <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active" style="width:100%"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-users"></i>  <span>Target Users</span></a></li>
-                    </ul>
+                    <tr>
+                      <th scope="row">8</th>
+                      <td>Zara</td>
+                      <td>Clothing</td>
+                      <td>ZZ997</td>
+                      <td>0.186</td>
+                      <td><a href=#>Link</a ></td>
+                    </tr>
 
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                      <div role="tabpanel" class="tab-pane active" id="home1" style="height: 400px; padding-left: 10px;">
-                          <h1 style="font-size: 20px; color: white; margin-top: -25px" align="left">User group 1</h1>
-                          <p style="color: white; font-size: 15px; padding-left: 10px" align="left">
-                            Age: 15 - 20<br>
-                            Device: 90% mobile, 10% desktop<br>
-                            Location: US Mid-East<br>
-                            Gender: Male<br>
-                            Advertisement Result:<br>
-                              &nbsp;&nbsp;50% closed tab, 20% switched tab<br>
-                              &nbsp;&nbsp;15% clicked skip<br>
-                              &nbsp;&nbsp;10% finished, 5% clicked
-                          </p>
-                          <h1 style="font-size: 20px; color: white" align="left">User group 2</h1>
-                          <p style="color: white; font-size: 15px; padding-left: 10px" align="left">
-                            Age: 25 - 30<br>
-                            Device: 20% mobile, 80% desktop<br>
-                            Location: China North<br>
-                            Gender: Female<br>
-                            Advertisement Result:<br>
-                              &nbsp;&nbsp;30% closed tab, 30% switched tab<br>
-                              &nbsp;&nbsp;20% clicked skip<br>
-                              &nbsp;&nbsp;20% finished, 15% clicked
-                          </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container" style="position: absolute; margin-top: 0px; margin-left: 400px; width: auto">
-              <div class="row">
-                <div class="col-md-12">
-                  <!-- Nav tabs -->
-                  <div class="card">
-                    <ul class="nav nav-tabs" role="tablist">
-                      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-hand-paper-o"></i>  <span>Behavior</span></a></li>
-                      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-file-video-o"></i>  <span>Content</span></a></li>
-                      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i class="fa fa-fighter-jet"></i>  <span>Strategy</span></a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                      <div role="tabpanel" class="tab-pane active" id="home" style="height: 400px">
-                          <div align="left" style="margin-top: -20px; margin-left: 50px; position: relative">
-                            <button id="ub1" style="background-color: transparent; border-color: white; color: white; position: inherit" class="btn btn-primary">User group 1</button><br>
-                            <button id="ub2" style="background-color: transparent; border-color: white; color: white; position: inherit; margin-top: 5px" class="btn btn-primary">User group 2</button><br>
-                          </div>
-                          <img id="user1" src="https://image.ibb.co/ednfCm/user1.png" style="width: 600px; margin-top: -60px; display: block; margin-left: 20px">
-                          <img id="user2" src="https://image.ibb.co/bMfp56/user2.png" style="width: 600px; margin-top: -60px; display: none; margin-left: 20px">
-                      </div>
-
-                      <div role="tabpanel" class="tab-pane" id="profile" style="height: 400px; padding-left: 20px">
-                          <h1 style="font-size: 25px; color: white; margin-top: 0px" align="left">Why would people watch this:</h1>
-                          <p style="color: white; font-size: 20px; padding-left: 10px" align="left">
-                            #Bitcoin: 40%<br>
-                            #FinTech: 30%<br>
-                            #Mining: 5%<br>
-                            #Technology: 15%<br>
-                            #Cartoon: 10%
-                          </p>
-                          <h1 style="font-size: 25px; color: white; margin-top: 20px" align="left">They are also watching:</h1>
-                          <p style="color: white; font-size: 20px; padding-left: 10px" align="left">
-                            #Fraud: 15 million<br>
-                            #Internet: 12 million<br>
-                            #Tutorial: 30 million<br>
-                            #Art: 3 million<br>
-                            #Blockchain: 50 million<br>
-                          </p>
-                      </div>
-                      
-                      <div role="tabpanel" class="tab-pane" id="messages" style="height: 400px; padding-left: 20px">
-                          <h1 style="font-size: 25px; color: white; margin-top: 0px" align="left">Expected 1-month viewership: 900,000</h1>
-                          <br>
-                          <br>
-                          <h1 style="font-size: 25px; color: white; margin-top: -20px" align="left">Suggestions and Predictions</h1>
-                          <p style="color: white; font-size: 20px; padding-left: 10px" align="left">
-                            Post when "bitcoin" appears on TechCrunch<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp; + 50% viewership<br>
-                            Pivot to a tutorial<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp; + 20% viewership<br>
-                            Trigger a celebrity share on Instagram<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp; + 60% viewership<br>
-                            Include content about Blockchain<br>
-                              &nbsp;&nbsp;&nbsp;&nbsp; + 35% viewership
-                          </p>
-
-                          <button style="background-color: transparent; border-color: white; color: white; position: inherit; margin-top: 5px" class="btn btn-primary btn-lg">Help me to grow!</button><br>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+                </tbody>
+          </table>
         </div>
     </div>
 
      <footer style="height:10px">
-        <p style="color: white; margin-top: -10px" align="left">&copy; 2017 Verse, Inc.</p>
+        <p style="color: white; margin-top: -10px" align="left">&copy; 2018 MagicLens, Inc.</p>
       </footer>
 
     <!-- jQuery -->

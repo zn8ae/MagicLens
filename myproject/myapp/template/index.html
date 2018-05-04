@@ -188,7 +188,8 @@
         <br>
         {% if is_logged_in %}
             <br>
-            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'map' %}'" role="button" style="background-color: azure; border-color: black; color: #150D33;"> Reflect &raquo;</a>
+            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'map' %}'" role="button" style="background-color: azure; border-color: #000031; color:#000031;"> Past &raquo;</a>
+            <a name="create" class="btn btn-primary btn-lg" onclick="location.href='{% url 'predict' %}'" role="button" style="margin-left: 100px; color: white; background-color: Transparent; border-color: white;">Future &raquo;</a>
             </a>
             <br><br><br>
         {% endif %}

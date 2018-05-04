@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^logged/', views.logged, name = 'logged'),
     url(r'^dashboard/', views.dashboard, name = 'dashboard'),
     url(r'^prediction/', views.prediction, name = 'prediction'),
+    url(r'^predict/', views.predict, name = 'predict'),
 ]
